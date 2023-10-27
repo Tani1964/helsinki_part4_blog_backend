@@ -25,11 +25,14 @@ app.use(express.json());
 
 // using the middleware
 app.use(middleware.requestLogger);
+
+app.use("/", blogRouter);
+
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
 // routing
 console.log(1)
-app.use("/api/blogs", blogRouter);
+
 
 module.exports = app;
